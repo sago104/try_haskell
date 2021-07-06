@@ -17,3 +17,20 @@ areaSquare s = areaRect s s
 
 -- Volume of a cylinder
 volumeCylinder r h = h * (areaCircle r)   
+
+-- Local Definitions
+heron a b c = sqrt ( s * (s - a) * (s - b) * (s - c))
+  where
+  s = (a + b + c)/2
+
+areaTriangleTrg a b c = c * h / 2
+  where
+  cosa = (b ^ 2 + c ^ 2 - a ^ 2) / (2 * b * c)
+  sina = sqrt(1 - cosa ^ 2)
+  h = b * sina
+
+areaTriangleHeron a b c = result
+  where
+  result = heron a b c
+  s = (a + b + c)/2
+
